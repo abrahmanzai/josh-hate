@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'brenden',
+    loadChildren: () => import('./brenden/brenden.module').then( m => m.BrendenPageModule)
+  },
+  {
+    path: 'abdul-hameed',
+    loadChildren: () => import('./abdul-hameed/abdul-hameed.module').then( m => m.AbdulHameedPageModule)
+  },
 ];
 
 @NgModule({
