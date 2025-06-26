@@ -10,9 +10,9 @@ export class FirebaseService {
   constructor(private firestore: Firestore) { }
 
 
-  async creatDoc(targetCollection: string, docId: string, name: string, score: number) {
+  async creatDoc(targetCollection: string, docId: string, name: string,) {
     let docRef: DocumentReference = doc(this.firestore, targetCollection, docId)
-    await setDoc(docRef, { name: name, score: score })
+    await setDoc(docRef, { name: name})
 
   }
   readDocs(targetCollection: string): Observable<any> {
@@ -22,9 +22,9 @@ export class FirebaseService {
 
   }
 
-  async updateDoc(targetCollection: string, docId: string, name: string, score: number) {
+  async updateDoc(targetCollection: string, docId: string, name: string,) {
     let docRef: DocumentReference = doc(this.firestore, targetCollection, docId)
-    await setDoc(docRef, { name: name, score: score })
+    await setDoc(docRef, { name: name,})
 
   }
   async deleteDocument(targetCollection: string, docId: string) {
